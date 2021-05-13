@@ -57,15 +57,6 @@ public class OrderController {
 	
 	}
 	
-	@GetMapping("/viewAllOrdersByRestaurant/{restaurantName}")
-	public ResponseEntity<List<OrderDetails>> viewAllOrdersByRestaurant(@PathVariable("restaurantName") String resName)
-	{
-		logger.info("Inside view all order by restaurant name method");
-		List<OrderDetails> order2 = orderservice.viewAllOrdersByRestaurant(resName);
-		
-			return new ResponseEntity<List<OrderDetails>>(order2, HttpStatus.OK);
-
-	}
 	
 	@GetMapping("/viewAllOrdersByCustomer/{customerId}")
 	public ResponseEntity<List<OrderDetails>> viewAllOrdersByCustomer(@PathVariable("customerId") int id) throws IdNotFoundException 

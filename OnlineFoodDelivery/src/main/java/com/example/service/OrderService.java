@@ -65,20 +65,6 @@ public class OrderService implements IOrderService{
 		return order;
 	}
 
-	/*@Override
-	public OrderDetails updateOrder(OrderDetails order) {
-		
-		OrderDetails order1=repository.save(order);
-		return order1;
-	}*/
-
-	@Override
-	public String removeOrderById(OrderDetails order) {
-	
-		repository.delete(order);
-		return "Order removed successfully...";
-	}
-
 	@Override
 	public OrderDetails viewOrderById(int id) throws IdNotFoundException {
 		
@@ -99,21 +85,7 @@ public class OrderService implements IOrderService{
 		return list;
 	}
 
-	/*@Override
-	public List<OrderDetails> viewAllOrders(int id) {
-	
-		List<OrderDetails> list = repository.findAll(id);
-		
-		return list;
-	}*/
 
-	@Override
-	public List<OrderDetails> viewAllOrdersByRestaurant(String resName) {
-		
-		List<OrderDetails> list = repository.findAllByRestaurant(resName);
-		System.out.println(list);
-		return list;
-	}
 	
 }
 
